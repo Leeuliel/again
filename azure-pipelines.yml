@@ -1,0 +1,18 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# YAML file in the main branch with release added to the branches list
+
+trigger:
+- main
+
+schedules: 
+  - cron: '0 0 * * *'
+    branches:
+      include:
+       - main
+       - release
+jobs:
+- job: A
+  steps:
+  - bash: echo "A"
